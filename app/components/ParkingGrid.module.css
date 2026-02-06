@@ -16,40 +16,40 @@
 .card {
   position: relative;
   padding: 16px;
-  background-color: var(--card-bg);
+  background-color: white;
   border: 1px solid var(--card-border);
-  /* Subtle border for glass */
   border-radius: 16px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  /* For car animation clipping */
   box-shadow: var(--shadow-sm);
 }
 
 .card:hover:not(.occupied) {
   border-color: var(--available);
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .available {
-  background: var(--card-bg);
+  background: white;
 }
 
 .occupied {
-  background: var(--card-bg);
-  /* Keep base bg, use indicators for status */
-  border-color: rgba(244, 63, 94, 0.2);
+  background: white;
+  border-color: rgba(244, 63, 94, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .current {
   border-color: var(--occupied);
-  box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2);
+  box-shadow: 0 0 0 1px var(--occupied);
+  background-color: #fff1f2;
+  /* Rose 50 */
 }
 
 .cardContent {
@@ -57,7 +57,6 @@
   flex-direction: column;
   gap: 8px;
   z-index: 2;
-  /* Above car */
   position: relative;
 }
 
@@ -84,12 +83,10 @@
   height: 6px;
   border-radius: 50%;
   background-color: var(--available);
-  box-shadow: 0 0 8px var(--available);
 }
 
 .occupied .statusDot {
   background-color: var(--occupied);
-  box-shadow: 0 0 8px var(--occupied);
 }
 
 .userName {
@@ -98,7 +95,7 @@
   margin-top: auto;
   font-weight: 500;
   padding: 4px 8px;
-  background: rgba(0, 0, 0, 0.05);
+  background: #f4f4f5;
   border-radius: 6px;
   width: fit-content;
 }
@@ -120,7 +117,7 @@
   width: 100%;
   height: 100%;
   fill: var(--occupied);
-  opacity: 0.15;
+  opacity: 0.1;
 }
 
 /* Animation trigger class */

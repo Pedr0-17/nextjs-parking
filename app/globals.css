@@ -1,50 +1,34 @@
 :root {
-  /* Zinc-based neutral palette */
-  --background: #f4f4f5;
-  --foreground: #18181b;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  /* Glass effect base */
-  --card-border: rgba(255, 255, 255, 0.4);
+  /* Minimalist Palette */
+  --background: #ffffff;
+  --foreground: #09090b;
+  /* Zinc 950 */
+  --text-secondary: rgba(24, 24, 27, 0.6);
+  /* Zinc 900 @ 60% */
+
+  --card-bg: #ffffff;
+  --card-border: #e4e4e7;
+  /* Zinc 200 */
 
   /* Status Colors */
-  --available: #10b981;
-  /* Emerald-500 */
+  --available: #34d399;
+  /* Emerald 400 */
   --available-bg: #d1fae5;
   --occupied: #f43f5e;
-  /* Rose-500 */
+  /* Rose 500 */
   --occupied-bg: #ffe4e6;
-  --blocked: #6b7280;
-  /* Gray-500 */
-  --blocked-bg: #f3f4f6;
+  --blocked: #71717a;
+  /* Zinc 500 */
+  --blocked-bg: #f4f4f5;
 
   /* Accents */
   --primary: #18181b;
   --primary-foreground: #ffffff;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --card-bg: rgba(24, 24, 27, 0.6);
-    --card-border: rgba(255, 255, 255, 0.1);
-
-    --available: #34d399;
-    --available-bg: rgba(16, 185, 129, 0.2);
-    --occupied: #fb7185;
-    --occupied-bg: rgba(244, 63, 94, 0.2);
-    --blocked: #9ca3af;
-    --blocked-bg: rgba(75, 85, 99, 0.2);
-
-    --primary: #fafafa;
-    --primary-foreground: #18181b;
-  }
+  /* Shadows - Minimalist */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 }
 
 * {

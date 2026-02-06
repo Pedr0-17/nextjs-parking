@@ -1,6 +1,5 @@
 .card {
   margin-bottom: 24px;
-  /* Minimalist container - no heavy borders */
   padding: 8px 0;
 }
 
@@ -20,11 +19,8 @@
 }
 
 .greeting strong {
-  background: linear-gradient(to right, var(--available), #34d399);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 700;
+  color: var(--available);
+  font-weight: 600;
 }
 
 .adminInfo {
@@ -42,7 +38,7 @@
 
 .label {
   font-size: 11px;
-  color: var(--blocked);
+  color: var(--text-secondary);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -50,7 +46,7 @@
 
 .value {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--foreground);
   line-height: 1;
 }
@@ -74,9 +70,10 @@
   flex-direction: column;
   gap: 4px;
   padding: 12px 20px;
-  background-color: var(--available-bg);
+  background-color: white;
   border-radius: 12px;
-  border: 1px solid rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--available);
+  box-shadow: var(--shadow-sm);
 }
 
 .spaceNumber {
@@ -87,10 +84,10 @@
 }
 
 .noSpace {
-  color: var(--blocked);
+  color: var(--text-secondary);
   font-size: 14px;
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .stats {
@@ -100,7 +97,7 @@
 
 .statLabel {
   font-size: 11px;
-  color: var(--blocked);
+  color: var(--text-secondary);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -108,7 +105,7 @@
 
 .statValue {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--foreground);
   line-height: 1;
 }
@@ -117,6 +114,7 @@
   .card {
     padding: 16px;
     background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     margin-bottom: 32px;
   }
