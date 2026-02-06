@@ -43,29 +43,15 @@ export default function WelcomeCard({
             </div>
           </div>
         ) : (
-          <div className={styles.userInfo}>
+          <div className={styles.userMinimal}>
             {currentSpaceId ? (
-              <div className={styles.currentSpace}>
-                <span className={styles.label}>Tu Espacio Actual</span>
-                <span className={styles.spaceNumber}>#{currentSpaceId}</span>
-              </div>
+              <span className={styles.minimalSpace}>Tu espacio: <strong>#{currentSpaceId}</strong></span>
             ) : (
-              <p className={styles.noSpace}>No tienes un espacio asignado actualmente</p>
+              <span className={styles.minimalSpace}>Sin espacio asignado</span>
             )}
-
-            <div className={styles.stats}>
-              <div>
-                <span className={styles.statLabel}>Disponibles</span>
-                <span className={styles.statValue}>{availableSpaces}</span>
-              </div>
-              <div>
-                <span className={styles.statLabel}>Ocupados</span>
-                <span className={styles.statValue}>{occupiedSpaces}</span>
-              </div>
-            </div>
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 }

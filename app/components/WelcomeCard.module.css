@@ -149,6 +149,17 @@
     /* Center align for better balance */
   }
 
+  .userMinimal {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .minimalSpace strong {
+    color: var(--available);
+    font-weight: 600;
+  }
+
   .currentSpace {
     width: 100%;
     align-items: center;
