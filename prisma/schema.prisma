@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int              @id @default(autoincrement())
+  pin           String           @unique
+  name          String
+  email         String?          @unique
+  isAdmin       Boolean          @default(false)
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  parkingHistory ParkingHistory[]
+  parkingBlocks  ParkingBlock[]
+}
+
+model ParkingHistory {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  spaceNumber Int
+  checkIn     DateTime @default(now())
+  checkOut    DateTime?
+  duration    Int?     // duración en minutos
+  createdAt   DateTime @default(now())
+  
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model ParkingBlock {
+  id          Int      @id @default(autoincrement())
+  spaceNumber Int      @unique
+  blockedBy   Int      // ID del admin que lo bloqueó
+  blockedAt   DateTime @default(now())
+  admin       User     @relation(fields: [blockedBy], references: [id], onDelete: Cascade)
+  
+  @@index([spaceNumber])
+}

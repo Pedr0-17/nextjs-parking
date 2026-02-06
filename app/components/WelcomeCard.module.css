@@ -1,0 +1,150 @@
+.card {
+  margin-bottom: 24px;
+  /* Minimalist container - no heavy borders */
+  padding: 8px 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--foreground);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.greeting strong {
+  background: linear-gradient(to right, var(--available), #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.adminInfo {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: right;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--blocked);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+.value.available {
+  color: var(--available);
+}
+
+.value.occupied {
+  color: var(--occupied);
+}
+
+.userInfo {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.currentSpace {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px;
+  background-color: var(--available-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.spaceNumber {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--available);
+  line-height: 1;
+}
+
+.noSpace {
+  color: var(--blocked);
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.stats {
+  display: flex;
+  gap: 32px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--blocked);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 16px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 32px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .greeting {
+    font-size: 20px;
+  }
+
+  .adminInfo,
+  .userInfo {
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .stat,
+  .stats>div {
+    text-align: left;
+  }
+
+  .currentSpace {
+    width: 100%;
+    align-items: center;
+  }
+}

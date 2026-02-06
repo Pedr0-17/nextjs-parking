@@ -1,0 +1,173 @@
+.container {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+.card {
+  position: relative;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  /* Subtle border for glass */
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  /* For car animation clipping */
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover:not(.occupied) {
+  border-color: var(--available);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.available {
+  background: var(--card-bg);
+}
+
+.occupied {
+  background: var(--card-bg);
+  /* Keep base bg, use indicators for status */
+  border-color: rgba(244, 63, 94, 0.2);
+}
+
+.current {
+  border-color: var(--occupied);
+  box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  /* Above car */
+  position: relative;
+}
+
+.spaceNumber {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--available);
+  box-shadow: 0 0 8px var(--available);
+}
+
+.occupied .statusDot {
+  background-color: var(--occupied);
+  box-shadow: 0 0 8px var(--occupied);
+}
+
+.userName {
+  font-size: 11px;
+  color: var(--foreground);
+  margin-top: auto;
+  font-weight: 500;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.carContainer {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 80px;
+  height: 120px;
+  opacity: 0;
+  transform: translateY(100px) rotate(-10deg);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carIcon {
+  width: 100%;
+  height: 100%;
+  fill: var(--occupied);
+  opacity: 0.15;
+}
+
+/* Animation trigger class */
+.parked {
+  opacity: 1;
+  transform: translateY(10px) rotate(-10deg);
+}
+
+.adminActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  z-index: 10;
+  position: relative;
+}
+
+.actionButton {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--available);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.actionButton.danger {
+  background-color: var(--occupied);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 12px;
+    min-height: 110px;
+  }
+
+  .spaceNumber {
+    font-size: 18px;
+  }
+}
