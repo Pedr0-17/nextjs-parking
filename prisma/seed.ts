@@ -51,7 +51,7 @@ async function main() {
   const history = await prisma.parkingHistory.createMany({
     data: [
       {
-        userId: 1,
+        userId: 1, // Asumiendo que el primer usuario creado es ID 1 (Carlos)
         spaceNumber: 1,
         checkIn: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 horas atrás
         checkOut: new Date(Date.now() - 1 * 60 * 60 * 1000), // 1 hora atrás
