@@ -160,11 +160,17 @@
 
 @media (max-width: 640px) {
   .card {
-    padding: 12px;
-    min-height: 110px;
+    padding: 14px;
+    min-height: 140px;
+    /* Increased touch target */
   }
 
   .spaceNumber {
-    font-size: 18px;
+    font-size: 24px;
+    /* Larger visibility */
+  }
+
+  .statusBadge {
+    font-size: 10px;
   }
 }

@@ -136,13 +136,23 @@
     gap: 16px;
   }
 
-  .stat,
-  .stats>div {
-    text-align: left;
+  .stats {
+    width: 100%;
+    justify-content: space-between;
+    /* Spread out stats */
+    gap: 12px;
+  }
+
+  .stat {
+    flex: 1;
+    text-align: center;
+    /* Center align for better balance */
   }
 
   .currentSpace {
     width: 100%;
     align-items: center;
+    padding: 16px;
+    /* Larger touch area/visibilty */
   }
 }
