@@ -1,8 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from 'next/server';
-
-const prisma = new PrismaClient();
-
+import { prisma } from '@/lib/prisma';
 export async function PUT(
   request: NextRequest,
   context: { params: Promise<{ id: string }> }
@@ -28,8 +25,6 @@ export async function PUT(
       { error: 'Error updating user' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -52,7 +47,5 @@ export async function DELETE(
       { error: 'Error deleting user' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }

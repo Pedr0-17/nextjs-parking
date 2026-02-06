@@ -1,7 +1,5 @@
-import { PrismaClient } from '@prisma/client';
 import { NextRequest, NextResponse } from 'next/server';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
 
 export async function GET(request: NextRequest) {
   try {
@@ -21,8 +19,6 @@ export async function GET(request: NextRequest) {
     console.error('Error fetching blocked spaces:', error);
     console.error('Stack:', (error as any).stack);
     return NextResponse.json({ error: 'Error fetching blocked spaces', details: String(error) }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -57,8 +53,6 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error creating blocked space:', error);
     return NextResponse.json({ error: 'Error creating blocked space' }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -77,7 +71,5 @@ export async function DELETE(request: NextRequest) {
   } catch (error) {
     console.error('Error deleting blocked space:', error);
     return NextResponse.json({ error: 'Error deleting blocked space' }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
